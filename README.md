@@ -2,6 +2,8 @@
 
 This example demonstrates how to create a application using Xamarin.Forms listview in Rider IDE.
 
+See [How to create a application using Xamarin.Forms listview in Rider IDE](https://github.com/SyncfusionExamples/How-to-create-a-application-using-Xamarin.Forms-listview-in-Rider-IDE) for more details.
+
 ## Requirements to run the demo
 
 * Xamarin add-ons for Visual Studio (available via the Visual Studio installer).
