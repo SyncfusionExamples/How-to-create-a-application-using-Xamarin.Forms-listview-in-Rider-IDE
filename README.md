@@ -2,6 +2,35 @@
 
 This example demonstrates how to create a application using Xamarin.Forms listview in Rider IDE.
 
+## Sample
+
+```xaml
+<ResourceDictionary>
+	<local:MyDataTemplateSelector x:Key="MessageTemplateSelector"></local:MyDataTemplateSelector>
+</ResourceDictionary>
+<Grid>
+    <syncfusion:SfListView x:Name="ListView" 
+                            ItemTemplate="{StaticResource MessageTemplateSelector}" 
+                            ItemsSource="{Binding Messages}"
+                            ItemSize="100" />
+</Grid>
+
+DataTemplateSelector:
+this.incomingDataTemplate = new DataTemplate(typeof(IncomingViewCell));
+this.outgoingDataTemplate = new DataTemplate(typeof(OutgoingViewCell));
+
+protected override DataTemplate OnSelectTemplate(object item, BindableObject container)
+{
+    var messageVm = item as Message;
+    if (messageVm == null)
+        return null;
+    return messageVm.IsIncoming ? this.incomingDataTemplate : this.outgoingDataTemplate;
+}
+
+private readonly DataTemplate incomingDataTemplate;
+private readonly DataTemplate outgoingDataTemplate;
+```
+
 See [How to create a application using Xamarin.Forms listview in Rider IDE?](https://www.syncfusion.com/kb/9833/how-to-create-a-application-using-xamarin-forms-listview-in-rider-ide) for more details.
 
 ## Requirements to run the demo
